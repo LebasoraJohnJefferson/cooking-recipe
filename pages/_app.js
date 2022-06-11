@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
     <Layout>
       {/* navigation header */}
       <header>
-        <div>
+        <div  className="bg-green-500 md:bg-red-500 lg:bg-green-500">
           <h1>Learn to Cook</h1>
         </div>
       </header>
