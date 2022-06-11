@@ -1,6 +1,8 @@
 import '../styles/globals.css'
 import Layout from '../components/Layout'
 import Head from 'next/head'
+import { config, dom } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -11,14 +13,10 @@ function MyApp({ Component, pageProps }) {
       <meta name="keywords" content="Recipe, Cooking, ingredients list " />
       <meta name="author" content="Lebasora, John Jefferson ; Paranas , Christian ; Luigi, Loreno" />
       <meta name="robots" content="index, follow" />
+      <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@bf7775b/css/all.css" rel='stylesheet' type='text/css' />
+      <style>{dom.css()}</style>
     </Head>
     <Layout>
-      {/* navigation header */}
-      <header>
-        <div  className="bg-green-500 md:bg-red-500 lg:bg-green-500">
-          <h1>Learn to Cook</h1>
-        </div>
-      </header>
       <Component {...pageProps} />
     </Layout>
     </>

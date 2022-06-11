@@ -6,7 +6,9 @@ const index = () => {
         <Head>
             <title>Cooking Recipe</title>
         </Head>
-        index
+
+        hello wolrd
+        
     </div>
   )
 }
