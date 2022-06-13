@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link"
 import Image from "next/image";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
@@ -25,9 +26,9 @@ export const Categories = ({ categories }) => {
                   className="rounded-lg"
                   unoptimized={true}
                 />
-                <div className="bg-purple-800 text-white font-semibold h-fit text-[12px] py-1 px-2 rounded-md shadow-lg cursor-pointer hover:bg-purple-700">
+                <Link href={`/categories/${category.strCategory}`}><div className="bg-purple-800 text-white font-semibold h-fit text-[12px] py-1 px-2 rounded-md shadow-lg cursor-pointer hover:bg-purple-700">
                   Meals &gt;
-                </div>
+                </div></Link>
               </div>
               <div className="mt-4">
                 <h3 className="font-medium text-lg mb-2">
