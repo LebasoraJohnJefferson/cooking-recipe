@@ -1,29 +1,26 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
+import Image from "next/image";
 
 const Header = () => {
   return (
-    <header>
-      <div className="bg-slate-800 drop-shadow py-5 px-2">
-        <div className="flex justify-between items-center max-w-[1200px] mx-auto">
-          <h1>Learn to Cook</h1>
+    <header className="bg-white drop-shadow fixed w-full z-10">
+      <div className="py-5 flex justify-between items-center px-5 max-w-[1200px] mx-auto">
+        <h1 className="flex items-center">
+          <Image src="/chef.svg" height={30} width={30} alt="chef icon" />
+          Cooking Recipe
+        </h1>
 
-          <div className="grid grid-cols-[1fr_30px] items-center">
-            <div className="relative w-fit">
-              <input
-                name="searchContent"
-                className="w-[350px] drop-shadow outline-0 py-3 px-4 text-sm rounded-lg bg-slate-900"
-                placeholder="Search ..."
-              />
-              <FontAwesomeIcon
-                icon={faMagnifyingGlass}
-                size="ms"
-                className="absolute top-3 right-3 text-slate-5500"
-              />
-            </div>
-            <div className="col-end-7 col-span-1">menuBar</div>
-          </div>
-        </div>
+        <ul className="flex gap-3">
+          <li className="py-2 px-3 hover:text-purple-400">
+            <Link href="/">Home</Link>
+          </li>
+          <li className="py-2 px-3 hover:text-purple-400">
+            <Link href="https://www.themealdb.com/api.php">API</Link>
+          </li>
+          <li className="py-2 px-3 hover:text-purple-400">
+            <Link href="/aboutUs">About Us</Link>
+          </li>
+        </ul>
       </div>
     </header>
   );
