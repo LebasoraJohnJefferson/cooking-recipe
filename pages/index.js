@@ -5,7 +5,7 @@ const index = ({categories}) => {
   return (
     <div>
         <Head>
-            <title>Cooking Recipe</title>
+            <title>Cooking Recipe  For Everyone</title>
         </Head>
 
         <Categories categories={categories} />

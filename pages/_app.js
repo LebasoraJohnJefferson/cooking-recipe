@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
     <>
     {/* meta tags for SEO */}
     <Head>
-      <meta name="description" content="The web offer <b>free ingredients and step-by-step cooking tutorial</b>, also encourage everyone to explore and discover new things." />
+      <meta name="description" content="The web offer free ingredients and step-by-step cooking tutorial, also encourage everyone to explore and discover new things." />
       <meta name="keywords" content="Recipe, Cooking, ingredients list " />
       <meta name="author" content="Lebasora, John Jefferson ; Paranas , Christian ; Luigi, Loreno" />
       <meta name="robots" content="index, follow" />
