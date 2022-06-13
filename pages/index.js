@@ -20,7 +20,7 @@ export default Home;
 
 export const getServerSideProps  = async () => {
   const res = await fetch(`${server}/api/categories/`)
-  categories = await res.json()
+  const categories = await res.json()
   return {
     props: { categories },
   };
