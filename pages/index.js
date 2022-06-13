@@ -1,3 +1,4 @@
+import { server } from '../config'
 import Head from "next/head";
 import { Categories } from "../components/Categories";
 
