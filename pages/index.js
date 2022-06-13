@@ -19,7 +19,6 @@ const Home = ({ categories }) => {
 export default Home;
 
 export const getServerSideProps  = async () => {
-  let categories={"categories":{}}
   const res = await fetch(`${server}/api/categories/`)
   categories = await res.json()
   return {
