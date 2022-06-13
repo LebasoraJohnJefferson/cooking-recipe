@@ -3,3 +3,5 @@ export default async function handler(req,res){
     const categories = await data.json()
     res.status(200).json(categories)
 }
+
+// error ocurred in productions
