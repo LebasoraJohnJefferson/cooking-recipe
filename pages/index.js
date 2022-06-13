@@ -6,14 +6,15 @@ import { getCategories } from '../lib/foodApi';
 const Home = ({ categories }) => {
   return (
     <div>
-      <Head>
-        <title>Cooking Recipe</title>
-      </Head>
+        <Head>
+            <title>Cooking Recipe  For Everyone</title>
+        </Head>
 
-      <Categories categories={categories} />
+        <Categories categories={categories} />
+        
     </div>
-  );
-};
+  )
+}
 
 export default Home;
 
