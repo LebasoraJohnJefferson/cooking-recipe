@@ -23,9 +23,10 @@ export const Categories = ({ categories }) => {
                   objectFit="cover"
                   alt={category.strCategory}
                   className="rounded-lg"
+                  unoptimized={true}
                 />
                 <div className="bg-purple-800 text-white font-semibold h-fit text-[12px] py-1 px-2 rounded-md shadow-lg cursor-pointer hover:bg-purple-700">
-                  Recipes &gt;
+                  Meals &gt;
                 </div>
               </div>
               <div className="mt-4">

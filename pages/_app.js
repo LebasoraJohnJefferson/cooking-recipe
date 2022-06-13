@@ -13,7 +13,6 @@ function MyApp({ Component, pageProps }) {
       <meta name="keywords" content="Recipe, Cooking, ingredients list " />
       <meta name="author" content="Lebasora, John Jefferson ; Paranas , Christian ; Luigi, Loreno" />
       <meta name="robots" content="index, follow" />
-      <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@bf7775b/css/all.css" rel='stylesheet' type='text/css' />
       {/* avoid fontawesome icon to load it default size */}
       <style>{dom.css()}</style>
     </Head>
