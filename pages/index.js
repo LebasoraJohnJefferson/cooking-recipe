@@ -1,8 +1,8 @@
-import {server} from '../config/'
-import Head from 'next/head'
-import { Categories } from '../components/Categories';
+import { server } from '../config'
+import Head from "next/head";
+import { Categories } from "../components/Categories";
 
-const index = ({categories}) => {
+const Home = ({ categories }) => {
   return (
     <div>
         <Head>
@@ -15,7 +15,7 @@ const index = ({categories}) => {
   )
 }
 
-export default index
+export default Home;
 
 export const getStaticProps = async ()=>{
   const res = await fetch(`${server}/api/categories/`)
