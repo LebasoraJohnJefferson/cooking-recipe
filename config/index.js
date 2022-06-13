@@ -1,3 +1,3 @@
 const dev = process.env.NODE_ENV !== 'production'
 
-export const server = dev ?  'http://localhost:3000' : 'cooking-recipe-blue.vercel.app'
+export const server = dev ?  'http://localhost:3000' : 'https://cooking-recipe-blue.vercel.app/'
