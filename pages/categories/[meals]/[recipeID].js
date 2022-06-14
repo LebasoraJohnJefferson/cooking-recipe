@@ -1,10 +1,15 @@
 import Recipe from "../../../components/Recipe";
 import { server } from "../../../config";
+import NoItemFound from "../../../components/NoItemFound";
+import Head from "next/head";
 
-const recipeID = ({details}) => {
+const recipeID = ({details,meals}) => {
   return (
     <>
-      <Recipe details = {details}/>
+        <Head>
+            <title>Cooking Recipe  For Everyone | {meals}</title>
+        </Head>
+      { details['meals']==null ? <NoItemFound /> : <Recipe details = {details}/>}
     </>
   )
 }
@@ -17,6 +22,6 @@ export const getServerSideProps  = async (context) => {
     const res = await fetch(`${server}/api/categories/${meals}/${recipe}`)
     const details = await res.json()
     return {
-      props: { details },
+      props: { details,meals },
     };
   };
