@@ -1,5 +1,6 @@
 import Image from 'next/image'
-const Meals = ({meals}) => {
+import Link from 'next/link'
+const Meals = ({meals,category_pick}) => {
 
   return (
     <div>
@@ -15,6 +16,7 @@ const Meals = ({meals}) => {
                       className="rounded-lg"
                       unoptimized={true}
                     />
+                    <Link href={`/categories/${category_pick}/${meal.idMeal}`}><div>recipe</div></Link>
             </div>
         ))}
     </div>
