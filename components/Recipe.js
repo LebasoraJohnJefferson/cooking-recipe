@@ -1,41 +1,73 @@
 import Image from "next/image";
 
 const Recipe = ({ details }) => {
-  const detail = details["meals"][0];
-  let count = 1;
-  // since the ingredient have same name we converted the object into list in order to loop and getThe ingredients and the measurements
-  const list_details = Object.keys(details["meals"][0]);
-  const new_list_details = list_details.filter(() => {
-    count += 1;
-    if (
-      (details["meals"][0][list_details[count]] != null ||
-        details["meals"][0][list_details[count]]) &&
-      count > 10
-    ) {
-      return details["meals"][0][list_details[count]];
+  const data = details.meals[0];
+  const arrIng = [];
+  const arrMea = [];
+  let ingCount = 0;
+
+  Object.entries(data).forEach(([key, value], idx) => {
+    let valid = data[key] != "" && data[key] != null;
+
+    if (key.startsWith("strIngredient") == true && valid) {
+      arrIng.push(value);
+      ingCount++;
+    }
+
+    if (key.startsWith("strMeasure") == true && valid) {
+      arrMea.push(value);
     }
   });
+
   return (
     <div>
-      <Image
-        loader={() => detail.strCategoryThumb}
-        src={detail.strMealThumb}
-        width={150}
-        height={100}
-        objectFit="cover"
-        alt={detail.strCategory}
-        className="rounded-lg"
-        unoptimized={true}
-      />
-      {detail.strMeal}
-      <h5>Instructions</h5>
-      <p>{detail.strInstructions}</p>
-      {new_list_details.map((col) => (
-        <div key={count + 1}>
-          {/* ingredient && measurements */}
-          <div>{details["meals"][0][col]}</div>
+      <div className="relative">
+        <img
+          src="/aa.jpg"
+          className="w-full h-[400px] object-cover opacity-50 rounded-xl"
+        />
+
+        <div className="absolute w-full top-8 left-8 grid gap-4">
+          <div className="bg-white w-fit p-1 pb-0 rounded-2xl  shadow-lg">
+            <Image
+              loader={() => detail.strCategoryThumb}
+              src={detail.strMealThumb}
+              width={350}
+              height={400}
+              objectFit="cover"
+              alt={detail.strCategory}
+              className="rounded-xl"
+              unoptimized={true}
+            />
+          </div>
+          <div className="grid-start-2">
+            <h2 className="font-bold text-3xl text-slate-900">
+              {detail.strMeal}
+            </h2>
+          </div>
         </div>
-      ))}
+      </div>
+
+      <div className="mt-[130px]">
+        <h5 className="font-semibold text-xl text-slate-900"><i className="fad fa-question-circle text-[18px]"></i> Instructions</h5>
+        <p className="mt-2">{detail.strInstructions}</p>
+
+        <div className="mt-10">
+          <h5 className="font-semibold text-xl text-slate-900 mb-2">
+          <i class="far fa-apple-crate text-[18px]"></i>{" "}
+            Ingredients
+          </h5>
+
+          {arrIng.map((val, key) => (
+            <ul key={key}>
+              <li>
+                {val}{" "}
+                <span className="text-sm text-slate-500">({arrMea[key]})</span>
+              </li>
+            </ul>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
