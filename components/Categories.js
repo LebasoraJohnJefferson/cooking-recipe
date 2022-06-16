@@ -27,7 +27,7 @@ export const Categories = ({ categories }) => {
                   unoptimized={true}
                 />
                 <Link href={`/categories/${category.strCategory}`}><div className="bg-purple-800 text-white font-semibold h-fit text-[12px] py-1 px-2 rounded-md shadow-lg cursor-pointer hover:bg-purple-700">
-                  Meals &gt;
+                  Meals <i className="far fa-eye"></i>
                 </div></Link>
               </div>
               <div className="mt-4">

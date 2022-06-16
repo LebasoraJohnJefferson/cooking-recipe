@@ -4,7 +4,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <main className="max-w-[1200px] mx-auto py-[110px]">{children}</main>
+      <main className="max-w-[1200px] mx-auto py-[110px] px-4">{children}</main>
     </>
   );
 };

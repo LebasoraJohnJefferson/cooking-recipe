@@ -1,5 +1,5 @@
-import { faDigitalTachograph } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
+import ReactPlayer from "react-player";
 
 const Recipe = ({ details }) => {
   const data = details.meals[0];
@@ -19,6 +19,8 @@ const Recipe = ({ details }) => {
       arrMea.push(value);
     }
   });
+
+  console.log(data);
 
   return (
     <div>
@@ -41,7 +43,7 @@ const Recipe = ({ details }) => {
               unoptimized={true}
             />
           </div>
-          <div className="grid-start-2">
+          <div className="grid-start-2 absolute -left-4 -bottom-14 md:relative md:left-0 md:bottom-0">
             <h2 className="font-bold text-3xl text-slate-900">
               {data.strMeal}
             </h2>
@@ -49,11 +51,13 @@ const Recipe = ({ details }) => {
         </div>
       </div>
 
-      <div className="mt-[130px]">
+      <div className="mt-[200px] md:mt-[130px]">
         <h5 className="font-semibold text-xl text-slate-900">
           <i className="fad fa-question-circle text-[18px]"></i> Instructions
         </h5>
-        <p className="mt-2">{data.strInstructions}</p>
+        <p className="mt-2 whitespace-pre-line leading-7">
+          {data.strInstructions}
+        </p>
 
         <div className="mt-10">
           <h5 className="font-semibold text-xl text-slate-900 mb-2">
@@ -68,6 +72,26 @@ const Recipe = ({ details }) => {
               </li>
             </ul>
           ))}
+        </div>
+
+        <div className="mt-10">
+          <h5 className="font-semibold text-xl text-slate-900 pb-2">
+            <i className="fab fa-youtube text-[18px]"></i> Demo
+          </h5>
+
+          {data.strYoutube != null ? (
+            <ReactPlayer
+              className="shadow-lg"
+              url={data.strYoutube}
+              width="100%"
+              height="400px"
+              controls="true"
+            />
+          ) : (
+            <div className="text-slate-900 text-xl font-bold h-[360px] grid place-content-center m-0">
+              Trailer not available.
+            </div>
+          )}
         </div>
       </div>
     </div>
