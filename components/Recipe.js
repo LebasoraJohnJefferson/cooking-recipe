@@ -52,13 +52,6 @@ const Recipe = ({ details }) => {
       </div>
 
       <div className="mt-[200px] md:mt-[130px]">
-        <h5 className="font-semibold text-xl text-slate-900">
-          <i className="fad fa-question-circle text-[18px]"></i> Instructions
-        </h5>
-        <p className="mt-2 whitespace-pre-line leading-7">
-          {data.strInstructions}
-        </p>
-
         <div className="mt-10">
           <h5 className="font-semibold text-xl text-slate-900 mb-2">
             <i className="far fa-apple-crate text-[18px]"></i> Ingredients
@@ -72,6 +65,15 @@ const Recipe = ({ details }) => {
               </li>
             </ul>
           ))}
+        </div>
+
+        <div className="mt-[40px]">
+          <h5 className="font-semibold text-xl text-slate-900">
+            <i className="fad fa-question-circle text-[18px]"></i> Instructions
+          </h5>
+          <p className="mt-2 whitespace-pre-line leading-7">
+            {data.strInstructions}
+          </p>
         </div>
 
         <div className="mt-10">

@@ -52,7 +52,7 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="grid place-items-center items-center h-full">
+          <div className="pt-[100px] items-center h-full">
             <ul className="grid gap-4 place-items-center">
               <li className="font-semibold text-slate-900 text-2xl hover:bg-slate-50 rounded-lg cursor-pointer w-fit py-2 px-4">
                 <Link href="/">Home</Link>
