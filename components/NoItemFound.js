@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from "next/link";
 
 const NoItemFound = () => {
   return (
@@ -6,7 +6,7 @@ const NoItemFound = () => {
       <div>NoItemFound</div>
       <Link href="/">go back</Link>
     </>
-  )
-}
+  );
+};
 
-export default NoItemFound
+export default NoItemFound;
