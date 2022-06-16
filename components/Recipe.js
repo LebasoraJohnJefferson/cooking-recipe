@@ -1,3 +1,4 @@
+import { faDigitalTachograph } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 
 const Recipe = ({ details }) => {
@@ -30,19 +31,19 @@ const Recipe = ({ details }) => {
         <div className="absolute w-full top-8 left-8 grid gap-4">
           <div className="bg-white w-fit p-1 pb-0 rounded-2xl  shadow-lg">
             <Image
-              loader={() => detail.strCategoryThumb}
-              src={detail.strMealThumb}
+              loader={() => data.strCategoryThumb}
+              src={data.strMealThumb}
               width={350}
               height={400}
               objectFit="cover"
-              alt={detail.strCategory}
+              alt={data.strCategory}
               className="rounded-xl"
               unoptimized={true}
             />
           </div>
           <div className="grid-start-2">
             <h2 className="font-bold text-3xl text-slate-900">
-              {detail.strMeal}
+              {data.strMeal}
             </h2>
           </div>
         </div>
@@ -50,7 +51,7 @@ const Recipe = ({ details }) => {
 
       <div className="mt-[130px]">
         <h5 className="font-semibold text-xl text-slate-900"><i className="fad fa-question-circle text-[18px]"></i> Instructions</h5>
-        <p className="mt-2">{detail.strInstructions}</p>
+        <p className="mt-2">{data.strInstructions}</p>
 
         <div className="mt-10">
           <h5 className="font-semibold text-xl text-slate-900 mb-2">
