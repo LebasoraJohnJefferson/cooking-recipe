@@ -50,13 +50,14 @@ const Recipe = ({ details }) => {
       </div>
 
       <div className="mt-[130px]">
-        <h5 className="font-semibold text-xl text-slate-900"><i className="fad fa-question-circle text-[18px]"></i> Instructions</h5>
+        <h5 className="font-semibold text-xl text-slate-900">
+          <i className="fad fa-question-circle text-[18px]"></i> Instructions
+        </h5>
         <p className="mt-2">{data.strInstructions}</p>
 
         <div className="mt-10">
           <h5 className="font-semibold text-xl text-slate-900 mb-2">
-          <i class="far fa-apple-crate text-[18px]"></i>{" "}
-            Ingredients
+            <i className="far fa-apple-crate text-[18px]"></i> Ingredients
           </h5>
 
           {arrIng.map((val, key) => (
